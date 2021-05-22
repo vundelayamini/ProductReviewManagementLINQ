@@ -71,6 +71,16 @@ namespace LINQDemo
                 Console.WriteLine(list.ProductID + " " + list.Review);
             }
         }
+        public void RetrieveTrueIsLike()
+        {
+            var Data = from reviews in dataTable.AsEnumerable()
+                       where reviews.Field<bool>("isLike").Equals(true)
+                       select reviews;
+            foreach (var dataItem in Data)
+            {
+                Console.WriteLine($"ProductID- {dataItem.ItemArray[0]} UserID- {dataItem.ItemArray[1]} Rating- {dataItem.ItemArray[2]} Review- {dataItem.ItemArray[3]} isLike- {dataItem.ItemArray[4]}");
+            }
+        }
     }
       
 }

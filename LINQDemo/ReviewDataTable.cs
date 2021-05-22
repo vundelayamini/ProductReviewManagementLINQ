@@ -12,11 +12,11 @@ namespace LINQDemo
         public AddDataIntoDataTable()
         {
             //Creating Columns of the DataTable
-            table.Columns.Add("ProductID");
-            table.Columns.Add("UserID");
-            table.Columns.Add("Rating");
-            table.Columns.Add("Review");
-            table.Columns.Add("isLike");
+            table.Columns.Add("ProductID",typeof(int));
+            table.Columns.Add("UserID", typeof(int));
+            table.Columns.Add("Rating", typeof(double));
+            table.Columns.Add("Review", typeof(string));
+            table.Columns.Add("isLike", typeof(bool));
             //Inserting Data into the Table
             table.Rows.Add(1, 1, 2d, "Good", true);
             table.Rows.Add(2, 1, 4d, "Good", true);

@@ -29,7 +29,9 @@ namespace LINQDemo
             //management.RetrieveCountOfReviewForEachProductId(productReviewList);
             //management.RetrieveProductIDAndReviews(productReviewList);
             //management.SkipTop5Records(productReviewList);
-            management.SelectProductIDAndReviews(productReviewList);
+           // management.SelectProductIDAndReviews(productReviewList);
+            management.RetrieveTrueIsLike();
+
         }
     }
 }
