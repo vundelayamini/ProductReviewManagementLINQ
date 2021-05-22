@@ -21,7 +21,7 @@ namespace LINQDemo
             }
         }
         // UC3 Retrieves the records with rating greater than three.
-        public void RetrieveRecordsWithGreaterThanThreeRating(List<ProductReview> listProductReview)
+        public void SelectedRecords(List<ProductReview> listProductReview)
         {
             var recordedData = from productReview in listProductReview
                                where (productReview.ProductID == 1 || productReview.ProductID == 4 || productReview.ProductID == 9)
