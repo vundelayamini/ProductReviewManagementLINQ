@@ -71,6 +71,8 @@ namespace LINQDemo
                 Console.WriteLine(list.ProductID + " " + list.Review);
             }
         }
+
+        //UC9-Retrieve all the records from the datatable variable who’s isLike value is true 
         public void RetrieveTrueIsLike()
         {
             var Data = from reviews in dataTable.AsEnumerable()
@@ -81,8 +83,19 @@ namespace LINQDemo
                 Console.WriteLine($"ProductID- {dataItem.ItemArray[0]} UserID- {dataItem.ItemArray[1]} Rating- {dataItem.ItemArray[2]} Review- {dataItem.ItemArray[3]} isLike- {dataItem.ItemArray[4]}");
             }
         }
+        //UC10-Find Average rating of the each productId
+        public void AverageRatingByProductID(List<ProductReview> productReviewList)
+        {
+            var Data = dataTable.AsEnumerable()
+                        .GroupBy(x => x.Field<int>("ProductID"))
+                        .Select(x => new { ProductID = x.Key, Average = x.Average(p => p.Field<double>("Rating")) });
+            foreach (var dataItem in Data)
+            {
+                Console.WriteLine(dataItem.ProductID + " " + dataItem.Average);
+            }
+        }
+
     }
-      
 }
     
 
