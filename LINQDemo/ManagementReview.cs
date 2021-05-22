@@ -20,7 +20,7 @@ namespace LINQDemo
                 Console.WriteLine("Product Id :" + productReview.ProductID + "\t" + "User Id :" + productReview.UserID + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
-        // UC3 Retrieves the records with rating greater than three.
+        // UC3-Retrieves the records with rating greater than three.
         public void RetrieveRecordsWithGreaterThanThreeRating(List<ProductReview> listProductReview)
         {
             var recordedData = from productReview in listProductReview
@@ -32,7 +32,7 @@ namespace LINQDemo
                 Console.WriteLine("Product Id :" + productReview.ProductID + "\t" + "User Id :" + productReview.UserID + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
-        // UC4 Retrieves the count of reviews for each productID.
+        // UC4-Retrieves the count of reviews for each productID.
         public void RetrieveCountOfReviewForEachProductId(List<ProductReview> listProductReview)
         {
             var recordedData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
@@ -42,7 +42,7 @@ namespace LINQDemo
             }
 
         }
-        // UC5 Retrieves only the product id and review of all records.
+        // UC5-Retrieves only the product id and review of all records.
         public void RetrieveProductIDAndReviews(List<ProductReview> listProductReview)
         {
             var recordedData = from productReview in listProductReview
@@ -50,6 +50,16 @@ namespace LINQDemo
             foreach (var list in recordedData)
             {
                 Console.WriteLine(list.ProductID + " " + list.Review);
+            }
+        }
+        // UC6-Skip top five records from the list and display other records.
+        public void SkipTop5Records(List<ProductReview> listProductReview)
+        {
+            var recordedData = (from productReview in listProductReview
+                                select productReview).Skip(5);
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ToString());
             }
         }
     }
