@@ -42,6 +42,19 @@ namespace LINQDemo
             }
 
         }
+        // UC5 Retrieves only the product id and review of all records.
+        public void RetrieveProductIDAndReviews(List<ProductReview> listProductReview)
+        {
+            var recordedData = from productReview in listProductReview
+                               select new { productReview.ProductID, productReview.Review };
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + " " + list.Review);
+            }
+        }
     }
 }
+    
+
+
 

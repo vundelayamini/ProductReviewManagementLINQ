@@ -26,7 +26,8 @@ namespace LINQDemo
             ManagementReview management = new ManagementReview();
             //management.TopRecords(productReviewList);
             //management.RetrieveRecordsWithGreaterThanThreeRating(productReviewList);
-            management.RetrieveCountOfReviewForEachProductId(productReviewList);
+            //management.RetrieveCountOfReviewForEachProductId(productReviewList);
+            management.RetrieveProductIDAndReviews(productReviewList);
         }
     }
 }
