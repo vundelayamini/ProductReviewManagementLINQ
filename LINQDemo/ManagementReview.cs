@@ -109,6 +109,21 @@ namespace LINQDemo
             }
 
         }
+        //UC12-Retreive all records from the list who’s Userid = 10 and order by rating
+        public void OrderByRatingOnCondition()
+        {
+            var Data = dataTable.AsEnumerable()
+                        .Where(x => x.Field<int>("UserID") == 10)
+                        .OrderBy(x => x.Field<double>("Rating"));
+            foreach (var dataItem in Data)
+            {
+                foreach (var item in dataItem.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+        }
 
     }
 }

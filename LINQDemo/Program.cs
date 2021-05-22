@@ -32,7 +32,9 @@ namespace LINQDemo
             // management.SelectProductIDAndReviews(productReviewList);
             // management.RetrieveTrueIsLike();
             //management.AverageRatingByProductID();
-            management.NiceReviews();
+           //management.NiceReviews();
+            management.OrderByRatingOnCondition();
+
         }
     }
 }
