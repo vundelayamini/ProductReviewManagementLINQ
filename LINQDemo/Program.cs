@@ -23,7 +23,8 @@ namespace LINQDemo
                 new ProductReview(){ProductID=10,UserID=1,Rating=8,Review="nice",isLike=true},
                 new ProductReview(){ProductID=11,UserID=1,Rating=3,Review="nice",isLike=true}
             };
-            Console.ReadLine();
+            ManagementReview management = new ManagementReview();
+            management.TopRecords(productReviewList);
         }
     }
 }
