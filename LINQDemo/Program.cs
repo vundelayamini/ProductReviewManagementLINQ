@@ -24,9 +24,9 @@ namespace LINQDemo
                 new ProductReview(){ProductID=11,UserID=1,Rating=3,Review="nice",isLike=true}
             };
             ManagementReview management = new ManagementReview();
-            management.TopRecords(productReviewList);
-            management.RetrieveRecordsWithGreaterThanThreeRating(productReviewList);
-
+            //management.TopRecords(productReviewList);
+            //management.RetrieveRecordsWithGreaterThanThreeRating(productReviewList);
+            management.RetrieveCountOfReviewForEachProductId(productReviewList);
         }
     }
 }

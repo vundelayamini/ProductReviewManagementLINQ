@@ -32,7 +32,16 @@ namespace LINQDemo
                 Console.WriteLine("Product Id :" + productReview.ProductID + "\t" + "User Id :" + productReview.UserID + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
+        // UC4 Retrieves the count of reviews for each productID.
+        public void RetrieveCountOfReviewForEachProductId(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + " " + list.Count);
+            }
 
+        }
     }
 }
 
