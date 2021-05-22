@@ -52,7 +52,7 @@ namespace LINQDemo
                 Console.WriteLine(list.ProductID + " " + list.Review);
             }
         }
-        // UC6-Skip top five records from the list and display other records.
+        // UC6-Skip top five records from the list 
         public void SkipTop5Records(List<ProductReview> listProductReview)
         {
             var recordedData = (from productReview in listProductReview
@@ -60,6 +60,15 @@ namespace LINQDemo
             foreach (var list in recordedData)
             {
                 Console.WriteLine(list.ToString());
+            }
+        }
+        // UC7 Retrieving reviews and productId using the lambda expression 
+        public void SelectProductIDAndReviews(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.Select(x => new { x.ProductID, x.Review });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + " " + list.Review);
             }
         }
     }

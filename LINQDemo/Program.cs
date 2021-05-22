@@ -16,7 +16,7 @@ namespace LINQDemo
                 new ProductReview(){ProductID=3,UserID=1,Rating=5,Review="Good",isLike=true},
                 new ProductReview(){ProductID=4,UserID=1,Rating=6,Review="Good",isLike=false},
                 new ProductReview(){ProductID=5,UserID=1,Rating=2,Review="nice",isLike=true},
-                new ProductReview(){ProductID=6,UserID=1,Rating=1,Review="bas",isLike=true},
+                new ProductReview(){ProductID=6,UserID=1,Rating=1,Review="bad",isLike=true},
                 new ProductReview(){ProductID=8,UserID=1,Rating=1,Review="Good",isLike=false},
                 new ProductReview(){ProductID=8,UserID=1,Rating=9,Review="nice",isLike=true},
                 new ProductReview(){ProductID=2,UserID=1,Rating=10,Review="nice",isLike=true},
@@ -28,8 +28,8 @@ namespace LINQDemo
             //management.RetrieveRecordsWithGreaterThanThreeRating(productReviewList);
             //management.RetrieveCountOfReviewForEachProductId(productReviewList);
             //management.RetrieveProductIDAndReviews(productReviewList);
-            management.SkipTop5Records(productReviewList);
-
+            //management.SkipTop5Records(productReviewList);
+            management.SelectProductIDAndReviews(productReviewList);
         }
     }
 }
