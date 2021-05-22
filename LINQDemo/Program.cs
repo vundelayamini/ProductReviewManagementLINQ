@@ -31,7 +31,8 @@ namespace LINQDemo
             //management.SkipTop5Records(productReviewList);
             // management.SelectProductIDAndReviews(productReviewList);
             // management.RetrieveTrueIsLike();
-            management.AverageRatingByProductID(productReviewList);
+            //management.AverageRatingByProductID();
+            management.NiceReviews();
         }
     }
 }

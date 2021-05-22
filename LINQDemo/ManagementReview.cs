@@ -84,7 +84,7 @@ namespace LINQDemo
             }
         }
         //UC10-Find Average rating of the each productId
-        public void AverageRatingByProductID(List<ProductReview> productReviewList)
+        public void AverageRatingByProductID()
         {
             var Data = dataTable.AsEnumerable()
                         .GroupBy(x => x.Field<int>("ProductID"))
@@ -93,6 +93,21 @@ namespace LINQDemo
             {
                 Console.WriteLine(dataItem.ProductID + " " + dataItem.Average);
             }
+        }
+        //UC11-Retreive all records from the list who’s review message contain “nice”
+        public void NiceReviews()
+        {
+            var Data = dataTable.AsEnumerable()
+                        .Where(x => x.Field<string>("Review").Contains("Nice", StringComparison.OrdinalIgnoreCase));
+            foreach (var dataItem in Data)
+            {
+                foreach (var item in dataItem.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+
         }
 
     }
